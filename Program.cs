@@ -1,9 +1,6 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.IO;
 using salt_strings.Strings;
 
 namespace salt_strings
@@ -114,7 +111,10 @@ namespace salt_strings
                 }
                 else if (args[1].ToLower() == "txt")
                 {
-                    Console.WriteLine("Extraction to TXT not implemented yet.");
+                    Console.WriteLine("Mode: Extraction tot TXT");
+                    ms.inputFile = args[2];
+                    ms.Read();
+                    ms.GetLocaleById(0);
                     return;
                 }
             }
