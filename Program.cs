@@ -12,7 +12,7 @@ namespace salt_strings
     {
         static void Main(string[] args)
         {
-            /*List<string> arguments = args.ToList();
+            List<string> arguments = args.ToList();
             string mode = "";
             if (arguments[0] == "-mode")
             {
@@ -62,10 +62,7 @@ namespace salt_strings
                         }
                     default: break;
                 }
-            }*/
-            Monsters ms = new Monsters();
-            ms.inputFile = "monsters.zms";
-            ms.GetLocaleById(0);
+            }
         }
 
         static void Loot(string[] args)
