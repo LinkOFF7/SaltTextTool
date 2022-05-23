@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -60,11 +60,50 @@ namespace salt_strings
                             Loot(arguments.ToArray());
                             break;
                         }
+                    case "monsters":
+                    case "monster":
+                        {
+                            arguments.RemoveRange(0, 2);
+                            Monsters(arguments.ToArray());
+                            break;
+                        }
                     default: break;
                 }
             }
         }
 
+        static void Monsters(string[] args)
+        {
+            Monsters ms = new Monsters();
+            if (args[0].ToLower() == "-extract")
+            {
+                if (args[1].ToLower() == "json")
+                {
+                    Console.WriteLine("Mode: Dump to JSON");
+                    ms.inputFile = args[2];
+                    ms.Serialize();
+                    return;
+                }
+                else if (args[1].ToLower() == "txt")
+                {
+                    Console.WriteLine("Extraction to TXT not implemented yet.");
+                    return;
+                }
+            }
+            else if (args[0].ToLower() == "-import")
+            {
+                if (args[1].ToLower() == "json")
+                {
+                    Console.WriteLine("Import from JSON not implemented yet.");
+                    return;
+                }
+                else if (args[1].ToLower() == "txt")
+                {
+                    Console.WriteLine("Import from TXT not implemented yet.");
+                    return;
+                }
+            }
+        }
         static void Loot(string[] args)
         {
             Loot loot = new Loot();
