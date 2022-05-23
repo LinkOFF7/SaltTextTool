@@ -12,6 +12,11 @@ namespace salt_strings
     {
         static void Main(string[] args)
         {
+            if(args.Length < 3)
+            {
+                PrintUsage();
+                return;
+            }
             List<string> arguments = args.ToList();
             string mode = "";
             if (arguments[0] == "-mode")
@@ -70,6 +75,29 @@ namespace salt_strings
                     default: break;
                 }
             }
+        }
+
+        static void PrintUsage()
+        {
+            Console.WriteLine("Salt and Sacrifice Text Tool by LinkOFF v.0.9");
+            Console.WriteLine("");
+            Console.WriteLine("Usage: salt_strings.exe -mode <mode> <-extract/-import> <json/txt> <input game file> [input txt/json] [output file]");
+            Console.WriteLine("");
+            Console.WriteLine("Modes:");
+            Console.WriteLine("  skilltree\tWork with skilltree.zsx file");
+            Console.WriteLine("  dialog\tWork with dialog.zdx file");
+            Console.WriteLine("  strings\tWork with strings.ztx file");
+            Console.WriteLine("  missions\tWork with missions.zms file");
+            Console.WriteLine("  loot\t\tWork with loot.zls file");
+            Console.WriteLine("  monsters\tWork with monsters.zms file (dump to JSON only)");
+            Console.WriteLine("");
+            Console.WriteLine("Examples of extraction:");
+            Console.WriteLine(@"  salt_strings.exe -mode loot -extract txt loot.zls");
+            Console.WriteLine(@"  salt_strings.exe -mode loot -extract json loot.zls");
+            Console.WriteLine("Examples of import:");
+            Console.WriteLine(@"  salt_strings.exe -mode loot -import txt strings.ztx strings.ztx.txt new\strings.ztx");
+            Console.WriteLine(@"  salt_strings.exe -mode loot -import txt loot.zls loot.zls.txt new\loot.zls");
+            Console.WriteLine("");
         }
 
         static void Monsters(string[] args)
