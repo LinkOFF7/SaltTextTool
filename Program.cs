@@ -94,7 +94,7 @@ namespace salt_strings
             Console.WriteLine(@"  salt_strings.exe -mode loot -extract json loot.zls");
             Console.WriteLine("Examples of import:");
             Console.WriteLine(@"  salt_strings.exe -mode loot -import txt strings.ztx strings.ztx.txt new\strings.ztx");
-            Console.WriteLine(@"  salt_strings.exe -mode loot -import txt loot.zls loot.zls.txt new\loot.zls");
+            Console.WriteLine(@"  salt_strings.exe -mode loot -import json loot.zls loot.zls.json new\loot.zls");
             Console.WriteLine("");
         }
 
