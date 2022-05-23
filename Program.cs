@@ -7,6 +7,7 @@ namespace salt_strings
 {
     internal class Program
     {
+        const int localeId = 0;
         static void Main(string[] args)
         {
             if(args.Length < 3)
@@ -114,7 +115,7 @@ namespace salt_strings
                     Console.WriteLine("Mode: Extraction tot TXT");
                     ms.inputFile = args[2];
                     ms.Read();
-                    ms.GetLocaleById(0);
+                    ms.GetLocaleById(localeId);
                     return;
                 }
             }
@@ -149,7 +150,7 @@ namespace salt_strings
                     Console.WriteLine("Mode: Extraction to TXT");
                     loot.inputFile = args[2];
                     loot.Read();
-                    loot.GetLocaleById(0, loot.inputFile + ".txt");
+                    loot.GetLocaleById(localeId, loot.inputFile + ".txt");
                     return;
                 }
             }
@@ -168,7 +169,7 @@ namespace salt_strings
                     Console.WriteLine("Mode: Import from TXT");
                     loot.inputFile = args[2];
                     loot.Read();
-                    loot.InsertLocaleById(0, args[3]);
+                    loot.InsertLocaleById(localeId, args[3]);
                     loot.Write(args[4]);
                 }
             }
@@ -191,7 +192,7 @@ namespace salt_strings
                     Console.WriteLine("Mode: Extraction to TXT");
                     ms.inputFile = args[2];
                     ms.Read();
-                    ms.GetLocaleById(0, ms.inputFile + ".txt");
+                    ms.GetLocaleById(localeId, ms.inputFile + ".txt");
                     return;
                 }
             }
@@ -210,7 +211,7 @@ namespace salt_strings
                     Console.WriteLine("Mode: Import from TXT");
                     ms.inputFile = args[2];
                     ms.Read();
-                    ms.InsertLocaleById(0, args[3]);
+                    ms.InsertLocaleById(localeId, args[3]);
                     ms.Write(args[4]);
                     return;
                 }
@@ -234,7 +235,7 @@ namespace salt_strings
                     Console.WriteLine("Mode: Extraction to TXT");
                     skill.inputFile = args[2];
                     skill.Read();
-                    skill.GetLocaleById(0, skill.inputFile + ".txt");
+                    skill.GetLocaleById(localeId, skill.inputFile + ".txt");
                     return;
                 }
             }
@@ -253,7 +254,7 @@ namespace salt_strings
                     Console.WriteLine("Mode: Import from TXT");
                     skill.inputFile = args[2];
                     skill.Read();
-                    skill.InsertLocaleById(0, args[3]);
+                    skill.InsertLocaleById(localeId, args[3]);
                     skill.Write(args[4]);
                     return;
                 }
@@ -276,7 +277,7 @@ namespace salt_strings
                 {
                     Console.WriteLine("Mode: Extraction to TXT");
                     locText.inputFile = args[2];
-                    locText.GetLocaleById(0, locText.inputFile + ".txt");
+                    locText.GetLocaleById(localeId, locText.inputFile + ".txt");
                     return;
                 }
             }
@@ -293,7 +294,7 @@ namespace salt_strings
                 {
                     Console.WriteLine("Mode: Import from TXT");
                     locText.inputFile = args[2];
-                    locText.WriteLocaleById(0, args[3], args[4]);
+                    locText.WriteLocaleById(localeId, args[3], args[4]);
                     return;
                 }
             }
@@ -316,7 +317,7 @@ namespace salt_strings
                 {
                     Console.WriteLine("Mode: Extraction to TXT");
                     xs.filename = args[2];
-                    xs.GetLocaleById(0, xs.filename + ".txt");
+                    xs.GetLocaleById(localeId, xs.filename + ".txt");
                     return;
                 }
             }
@@ -333,7 +334,7 @@ namespace salt_strings
                 {
                     Console.WriteLine("Mode: Import from TXT");
                     xs.filename = args[2];
-                    xs.WriteLocaleById(0, args[3], args[4]);
+                    xs.WriteLocaleById(localeId, args[3], args[4]);
                     return;
                 }
             }
