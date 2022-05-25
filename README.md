@@ -1,6 +1,6 @@
 # SaltTextTool
 # Usage:
-> salt_strings.exe -mode <mode> <-extract/-import> <json/txt> <input game file> [input txt/json] [output file]
+> salt_strings.exe -mode <mode> <mode> <-extract/-import> <json/txt> <input game file> [input txt/json] [output file]
   
 Modes:
 ```
